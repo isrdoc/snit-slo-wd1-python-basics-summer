@@ -1,3 +1,3 @@
-user_name = input("Enter your name: ")
+user_age_number = int(input("Enter your age: "))
 
-print("Your name is: " + user_name)
+print(user_age_number + 10)
