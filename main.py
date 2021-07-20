@@ -1,11 +1,19 @@
-secret = 12
+import random
+
+secret = random.randint(1, 30)
 guess = None
 
 while True:
     guess = int(input("Guess the secret number (between 1 and 30): "))
 
     if guess == secret:
-        print("You've guessed it - congratulations! It's number " + str(secret) + ".")
+        print(f"You've guessed it - congratulations! It's number {secret}.")
         break
 
-    print("Sorry, your guess is not correct... The secret number is not " + str(guess))
+    hint = None
+    if guess > secret:
+        hint = "smaller"
+    else:
+        hint = "bigger"
+
+    print(f"Your guess is not correct... try something {hint}")
