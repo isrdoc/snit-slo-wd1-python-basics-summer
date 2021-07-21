@@ -1,19 +1,9 @@
-import random
+with open("ninja.txt", "r") as ninja_file:
+    contents = ninja_file.read()
+    lines = contents.splitlines()
 
-secret = random.randint(1, 30)
-guess = None
+    for line in lines:
+        print(line)
 
-while True:
-    guess = int(input("Guess the secret number (between 1 and 30): "))
-
-    if guess == secret:
-        print(f"You've guessed it - congratulations! It's number {secret}.")
-        break
-
-    hint = None
-    if guess > secret:
-        hint = "smaller"
-    else:
-        hint = "bigger"
-
-    print(f"Your guess is not correct... try something {hint}")
+with open("ninja2.txt", "w") as ninja_file_2:
+    ninja_file_2.write("Hello, new file!")
