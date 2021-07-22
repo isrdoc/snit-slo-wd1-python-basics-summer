@@ -7,11 +7,13 @@ guess = None
 attempts = 0
 secret_number_file = "secret_number_best_score.txt"
 
+# Print current best score
 with open(secret_number_file, "r") as attempts_file:
     attempts_from_file = int(attempts_file.read())
     print(f"Best score: {attempts_from_file} attempts.")
 
 while True:
+    # User guesses the secret number
     guess = int(input(f"Guess the secret number (between {lowest_number_to_guess} and {highest_number_to_guess}): "))
     attempts += 1
 
