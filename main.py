@@ -1,41 +1,19 @@
-import random
+cities = ["Ljubljana", "Maribor", "London", "Zagreb"]
+hours_at_which_i_got_up = [4, 6, 6, 3]
 
-lowest_number_to_guess = 1
-highest_number_to_guess = 20
-secret = random.randint(lowest_number_to_guess, highest_number_to_guess)
-guess = None
-attempts = 0
-secret_number_file = "secret_number_best_score.txt"
+for hour in hours_at_which_i_got_up:
+    print(f"I got up at {hour} hrs.")
 
-# Print current best score
-with open(secret_number_file, "r") as attempts_file:
-    attempts_from_file = int(attempts_file.read())
-    print(f"Best score: {attempts_from_file} attempts.")
 
-while True:
-    # User guesses the secret number
-    guess = int(input(f"Guess the secret number (between {lowest_number_to_guess} and {highest_number_to_guess}): "))
-    attempts += 1
-
-    # Check guess within boundaries
-    if guess < lowest_number_to_guess or guess > highest_number_to_guess:
-        print(f"Number {guess} is not between {lowest_number_to_guess} and {highest_number_to_guess}.")
-        continue
-
-    # Correct answer
-    if guess == secret:
-        print(f"You've guessed it - congratulations! It's number {secret}.")
-        print(f"Number of attempts: {attempts}")
-        if attempts < attempts_from_file:
-            with open(secret_number_file, "w") as attempts_file:
-                attempts_file.write(str(attempts))
-        break
-
-    # Wrong answer
-    hint = None
-    if guess > secret:
-        hint = "smaller"
-    else:
-        hint = "bigger"
-
-    print(f"Your guess is not correct... try something {hint}")
+basket_list = ["apple", "phone"]
+basket_dict = {
+    "size": "large",
+    "color": "orange",
+    "is_full": False,
+    "serial_number": 231423545,
+    "items": ["apple", "phone"],
+    "handle": {
+        "material": "straw",
+        "durability": 40
+    }
+}
